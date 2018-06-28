@@ -2,29 +2,22 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src') + '/index.js',
-    output: {},
+    entry: path.resolve(__dirname, 'src') + '/index.ts',
+    devtool: 'inline-source-map',
+    output: {
+        filename: 'apisearch.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                include: path.resolve(__dirname, 'src'),
-                exclude: /node_modules/
-            },
-            {
-                test: /\.js$/,
-                loader: 'eslint-loader',
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
                 exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        modules: [
-            path.resolve('./node_modules'),
-            path.resolve('./src')
-        ],
-        extensions: ['.json', '.js']
-    },
-    plugins: []
+        extensions: [ '.tsx', '.ts', '.js', '.json' ]
+    }
 };
