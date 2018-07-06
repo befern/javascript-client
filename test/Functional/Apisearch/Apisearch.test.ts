@@ -1,4 +1,4 @@
-import Apisearch from "../../src/Apisearch";
+import Apisearch from "../../../src/Apisearch";
 import { expect } from 'chai';
 import Query from "../../../src/Query/Query";
 import ImmutableConfig from "../../../src/Config/ImmutableConfig";

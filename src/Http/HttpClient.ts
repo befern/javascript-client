@@ -18,9 +18,9 @@ export default abstract class HttpClient {
     async abstract get(
         url:string,
         method:string,
-        query: any = {},
-        body: any = {},
-        server: any = {}
+        query: {any} = {},
+        body: {any} = {},
+        server: {any} = {}
     ) : Promise<Response>;
 
     /**
